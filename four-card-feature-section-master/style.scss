@@ -1,0 +1,152 @@
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+
+$Very-Dark-Blue: hsl(234, 12%, 34%);
+$Grayish-Blue: hsl(229, 6%, 66%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media screen and (max-width:375px) {
+            @content
+        }
+
+        ;
+
+
+    }
+}
+
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 93.75%;
+
+    @include respond(phone) {
+        font-size: 75%
+    }
+
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+.header {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    padding-top: 0;
+
+    &__title {
+
+        [class^='header__title--'] {
+            display: block;
+            font-size: 2rem;
+        }
+
+        &--light {
+            font-weight: 200;
+        }
+
+        &--bold {
+            font-weight: 600;
+        }
+    }
+
+    &__subtitle {
+        margin-top: .5rem;
+        padding: 0 26rem;
+        color: $Very-Dark-Blue;
+
+        @include respond(phone) {
+            padding: 0;
+        }
+    }
+}
+
+
+.details {
+    margin: 0 auto;
+    padding: 0 6rem;
+
+    @include respond(phone) {
+        padding: 0 3rem;
+    }
+
+    display: flex;
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    justify-content: center;
+    align-items: center;
+
+    [class^='details__middle--'],
+    [class^='details__right--'],
+    [class^='details__left--'] {
+        padding: 2rem;
+        padding-bottom: 8rem;
+        margin: .8rem;
+        position: relative;
+        font-size: .9rem;
+        background-color: $Very-Light-Gray;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+
+        img {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+        }
+
+        h3 {
+            font-weight: 600;
+            margin-bottom: .3rem;
+            font-size: 1.1rem;
+        }
+    }
+
+    &__right {
+
+        flex: 0 0 30%;
+
+        &--supervisor {
+            border-top: 5px solid $Blue;
+        }
+    }
+
+    &__middle {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 30%;
+
+        &--team {
+            border-top: 5px solid $Red;
+        }
+
+        &--karma {
+            border-top: 5px solid $Orange;
+        }
+    }
+
+    &__left {
+        flex: 0 0 30%;
+
+        &--calculator {
+            border-top: 5px solid $Cyan;
+        }
+    }
+}

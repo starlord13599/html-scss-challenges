@@ -1,0 +1,164 @@
+// # Front-end Style Guide
+
+// ## Layout
+
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+
+// ### Primary
+
+// - Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%)
+
+// ### Neutral
+
+//*VARIABLES
+$Pale-Blue: hsl(243, 100%, 93%);
+$Grayish-Blue: hsl(229, 7%, 55%);
+$Dark-Blue: hsl(228, 56%, 26%);
+$Very-Dark-Blue: hsl(229, 57%, 11%);
+
+// ## Typography
+
+// ### Body Copy
+
+// - Font size: 14px
+
+// ### Font
+
+// - Family: [Raleway](https://fonts.google.com/specimen/Raleway)
+// - Weights: 400, 700
+
+//*BASE
+*,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 87.5%;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+//*LAYOUT
+//*HERO
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-color: $Very-Dark-Blue;
+    position: relative;
+
+    .hero-image {
+        position: absolute;
+        top: 50%;
+    }
+
+    .main {
+        height: 50%;
+        width: 100%;
+    }
+
+    .hero-title {
+        background-color: $Dark-Blue;
+        display: inline-block;
+        padding: 1.5rem;
+        padding-right: 5.5rem;
+        border-radius: .5rem;
+        position: absolute;
+        top: 40%;
+        left: 20%;
+
+        // border-top-right-radius: 40%;
+        .hero-title-logo {
+
+            height: 1.8rem;
+            margin-bottom: .5rem;
+        }
+
+        .icons {
+            padding: .4rem 0;
+
+            .icns {
+                background-color: $Very-Dark-Blue;
+                padding: .5rem;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 8px;
+                margin-right: .5rem;
+                cursor: pointer;
+
+            }
+        }
+    }
+
+    .hero-indicator {
+
+
+
+        width: 40%;
+        background-color: $Dark-Blue;
+        padding: 3rem;
+        position: absolute;
+        top: 42%;
+        left: 40%;
+        border-radius: .5rem;
+
+        .text {
+            position: absolute;
+            top: 22%;
+            font-weight: 400;
+            color: white;
+
+            span {
+                font-weight: 700;
+
+            }
+        }
+
+
+        #storage-indicator {
+            width: 100%;
+
+        }
+    }
+}
+
+
+.values {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 700;
+}
+
+
+::-webkit-meter-bar {
+    background-color: $Very-Dark-Blue;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    height: .8rem;
+}
+
+
+
+
+
+//*FOOTER
+.attribution {
+    font-size: 11px;
+    text-align: center;
+
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
+}

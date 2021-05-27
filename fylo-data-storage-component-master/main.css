@@ -1,0 +1,119 @@
+*,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 87.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-color: #0c122c;
+  position: relative;
+}
+
+.hero .hero-image {
+  position: absolute;
+  top: 50%;
+}
+
+.hero .main {
+  height: 50%;
+  width: 100%;
+}
+
+.hero .hero-title {
+  background-color: #1d2c67;
+  display: inline-block;
+  padding: 1.5rem;
+  padding-right: 5.5rem;
+  border-radius: .5rem;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+
+.hero .hero-title .hero-title-logo {
+  height: 1.8rem;
+  margin-bottom: .5rem;
+}
+
+.hero .hero-title .icons {
+  padding: .4rem 0;
+}
+
+.hero .hero-title .icons .icns {
+  background-color: #0c122c;
+  padding: .5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  margin-right: .5rem;
+  cursor: pointer;
+}
+
+.hero .hero-indicator {
+  width: 40%;
+  background-color: #1d2c67;
+  padding: 3rem;
+  position: absolute;
+  top: 42%;
+  left: 40%;
+  border-radius: .5rem;
+}
+
+.hero .hero-indicator .text {
+  position: absolute;
+  top: 22%;
+  font-weight: 400;
+  color: white;
+}
+
+.hero .hero-indicator .text span {
+  font-weight: 700;
+}
+
+.hero .hero-indicator #storage-indicator {
+  width: 100%;
+}
+
+.values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  font-weight: 700;
+}
+
+::-webkit-meter-bar {
+  background-color: #0c122c;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffa399), to(#ff4d97));
+  background-image: linear-gradient(to right, #ffa399, #ff4d97);
+  height: .8rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution .attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=main.css.map */

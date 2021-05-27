@@ -1,0 +1,223 @@
+//*VARIABLES
+$Desaturated-Red: hsl(0, 36%, 70%);
+$Soft-Red: hsl(0, 93%, 68%);
+$Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+//*MIXINS
+
+@mixin respond($breakpoint) {
+
+
+    @if $breakpoint==phone {
+        @media screen and (max-width:375px) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tab-pot {
+        @media screen and (max-width:600px) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tab-land {
+        @media screen and (max-width:900px) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==laptop {
+        @media screen and (max-width:1024px) {
+            @content
+        }
+
+        ;
+    }
+}
+
+
+
+//*BASE
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Josefin Sans', sans-serif;
+
+    @include respond(laptop) {
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-land) {
+        font-size: 48%;
+    }
+
+    @include respond(tab-pot) {
+        font-size: 38.25%;
+    }
+
+    @include respond(phone) {
+        font-size: 38.25%;
+    }
+
+
+}
+
+
+body {
+    box-sizing: border-box;
+}
+
+
+
+//*HERO
+
+.hero {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%)), url(./images/bg-pattern-desktop.svg);
+
+    @include respond(tab-pot) {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__left {
+        flex-basis: 60%;
+        padding: 6rem 15rem;
+
+        @include respond(tab-pot) {
+            order: 2;
+            padding: 3rem 3rem;
+            text-align: center;
+        }
+
+        &__headings {
+            margin-top: 9rem;
+
+            @include respond(tab-pot) {
+                margin-top: 5rem;
+            }
+
+            &--1 {
+                display: block;
+                font-size: 7rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                letter-spacing: .8rem;
+                color: $Desaturated-Red;
+            }
+
+            &--2 {
+                display: block;
+                font-size: 6rem;
+                font-weight: 600;
+                letter-spacing: 1.4rem;
+                text-transform: uppercase;
+            }
+
+            &--3 {
+                display: block;
+                font-size: 6rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1.3rem;
+            }
+        }
+
+
+        &__paragraph {
+            font-size: 1.9rem;
+            text-align: left;
+            color: $Desaturated-Red;
+            margin-top: 2rem;
+            line-height: 3rem;
+
+            @include respond(tab-pot) {
+                text-align: center;
+                font-size: 2rem;
+                width: 100%;
+            }
+        }
+
+        &__email {
+            position: relative;
+            margin-top: 2rem;
+
+            @include respond(tab-pot) {
+                margin-top: 3rem;
+            }
+
+            &__input {
+                width: 100%;
+                padding: 1.5rem 1.6rem;
+                border-radius: 20rem;
+                border: 1px solid $Desaturated-Red;
+                color: black;
+                font-size: 2rem;
+
+                @include respond(tab-pot) {
+                    font-size: 2rem;
+                    padding: 2rem 1.6rem;
+                }
+
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::placeholder {
+                    color: $Desaturated-Red;
+                }
+
+            }
+
+            &__arrow {
+                background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+                padding: 1.75rem 4rem;
+                border-radius: 20rem;
+                position: absolute;
+                right: 0;
+                top: 0;
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+                cursor: pointer;
+
+
+            }
+        }
+    }
+
+    &__right {
+        flex-basis: 40%;
+        background-image: url(./images/hero-desktop.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @include respond(tab-pot) {
+            order: 1;
+            background-image: url(./images/hero-mobile.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+        }
+
+    }
+
+
+}

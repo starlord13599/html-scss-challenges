@@ -1,0 +1,212 @@
+//*VARIABLES
+$Voliet: hsl(257, 40%, 49%);
+$White: #fff;
+$grid-width:100%;
+$gutter-horizontal:4rem;
+$Black:#000;
+
+//*MIXINS
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width:37.5em) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tab-pot {
+        @media (max-width:56.25em) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tab-land {
+        @media (max-width:75em) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==big-desk {
+        @media (max-width:112.5em) {
+            @content
+        }
+
+        ;
+    }
+}
+
+
+
+
+//*BASE
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    // backface-visibility: hidden;
+
+}
+
+html {
+    font-size: 62.5%;
+    color: $White;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    box-sizing: border-box;
+
+}
+
+
+
+//*LAYOUT
+//!////!
+//*HERO
+
+.hero {
+    // height: 100vh;
+    background-color: $Voliet;
+    position: relative;
+    // backface-visibility: hidden;
+
+    &__container {
+        height: 100vh;
+        max-width: 85%;
+        background-image: url(./images/bg-desktop.svg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__logo {
+        position: absolute;
+        top: 3rem;
+        left: 4rem;
+        // backface-visibility: hidden;
+        animation: logo 1s;
+    }
+
+    &__details {
+        position: absolute;
+        margin: 0 auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        &__image {
+            // animation: details 1s;
+            width: 100%;
+
+            &--1 {
+                width: 100%;
+            }
+        }
+
+        &__heading {
+            font-size: 3rem;
+            font-weight: 700;
+            // backface-visibility: hidden;
+            padding: 1.2rem;
+            // animation: details 2s;
+        }
+
+        &__paragraph {
+            font-size: 1.16rem;
+            padding: 1.2rem;
+            // backface-visibility: hidden;
+            // animation: details 2.5s;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .btn:link,
+    .btn:visited {
+        text-decoration: none;
+        padding: 1rem 4rem;
+        border-radius: 50px;
+        font-size: 1rem;
+        background-color: white;
+        box-shadow: 0.3rem 1rem 1.4rem rgba($Black, .15);
+        margin-left: 1.2rem;
+    }
+}
+
+
+//*GRID
+.row {
+    margin: 0 auto;
+    max-width: $grid-width;
+
+    padding: 3rem 4rem;
+
+    [class^='col-'] {
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .col-1-of-2 {
+        width: calc((100% - #{$gutter-horizontal})/2);
+    }
+}
+
+
+
+
+//*FOOTER
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    top: 95%;
+    left: 40%;
+    position: absolute;
+
+    a {
+        color: white;
+    }
+}
+
+//*ANIMATION
+
+// @keyframes logo {
+
+//     0% {
+//         transform: translateX(100px);
+//         opacity: 0;
+//     }
+
+//     100% {
+//         transform: translateX(0);
+//         opacity: 1;
+//     }
+// }
+
+// @keyframes details {
+
+//     0% {
+//         transform: translateY(100px);
+//         opacity: 0;
+//     }
+
+//     100% {
+//         transform: translateY(0);
+//         opacity: 1;
+//     }
+// }

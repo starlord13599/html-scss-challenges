@@ -1,0 +1,216 @@
+:root {
+  --Primary: #eb2f64;
+  --Primary-light: #FF3366;
+  --Primary-dark: #BA265D;
+  --Grey-light-1: #faf9f9;
+  --Grey-light-2: #f4f2f2;
+  --Grey-light-3: #f0eeee;
+  --Grey-light-4: #ccc;
+  --Grey-dark-1: #333;
+  --Grey-dark-2: #777;
+  --Grey-dark-3: #999;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(var(--Primary)), to(var(--Primary-dark)));
+  background-image: linear-gradient(to right bottom, var(--Primary), var(--Primary-dark));
+  height: 100%;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 62.5%;
+}
+
+.navbar {
+  background-color: var(--Grey-light-1);
+  padding: 1.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.navbar__search {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__search--input {
+  width: 85%;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.4rem;
+  background-color: var(--Grey-light-2);
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: 800;
+}
+
+.navbar__search--input:focus {
+  width: 100%;
+}
+
+.navbar__search--input::-webkit-input-placeholder {
+  font-weight: 800;
+  color: var(--Grey-dark-2);
+}
+
+.navbar__search--button {
+  background-color: var(--Grey-light-2);
+  margin-left: -3rem;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+}
+
+.navbar__search--button:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.navbar__search--button svg {
+  fill: var(--Grey-dark-1);
+  height: 2rem;
+  background-color: var(--Grey-light-2);
+  width: 2rem;
+  cursor: pointer;
+}
+
+.navbar__notifications {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10%;
+          flex: 0 0 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.navbar__notifications [class^='navbar__notifications--'] {
+  margin-right: 3rem;
+  position: relative;
+}
+
+.navbar__notifications span {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(var(--Primary)), to(var(--Primary-dark)));
+  background-image: linear-gradient(to right bottom, var(--Primary), var(--Primary-dark));
+  font-size: 1rem;
+  border-radius: 50%;
+  padding: 0 .4rem;
+  position: absolute;
+  top: -7px;
+  right: -10px;
+  color: white;
+  font-weight: 800;
+}
+
+.navbar__notifications svg {
+  width: 2.3rem;
+  height: 2.3rem;
+  cursor: pointer;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hero .rightbar {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  background-color: var(--Grey-dark-1);
+  height: 100vh;
+  color: var(--Grey-light-1);
+  font-size: 1.8rem;
+}
+
+.hero .rightbar__lists {
+  list-style: none;
+  text-align: left;
+}
+
+.hero .rightbar__lists li {
+  padding: 1rem;
+  position: relative;
+  color: var(--Grey-light-1);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.hero .rightbar__lists li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.hero .rightbar__lists li::before {
+  content: "";
+  clear: both;
+  display: table;
+  background-color: var(--Primary);
+  height: 100%;
+  width: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: width .5s .2s, .2s transform;
+  transition: width .5s .2s, .2s transform;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  z-index: -1;
+}
+
+.hero .rightbar__lists li:hover::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  color: var(--Grey-light-1);
+  width: 100%;
+}
+
+.hero .leftbar {
+  -ms-flex-preferred-size: 85%;
+      flex-basis: 85%;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: hsl(228, 56%, 26%);
+  --secondary-color: hsl(229, 57%, 11%);
+  --third-color: hsl(243, 100%, 93%);
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background-image: url(images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.wrapper {
+  margin: 100px auto 0px auto;
+  width: 80%;
+  height: 300px;
+}
+
+.container {
+  background-color: var(--primary-color);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 3px var(--secondary-color);
+}
+
+.container--func {
+  padding: 30px 60px 30px 30px;
+  border-radius: 10px 100px 10px 10px;
+}
+
+.container--storage {
+  padding: 30px 30px 0px 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--third-color);
+}
+
+.func__list {
+  list-style-type: none;
+  display: flex;
+  margin-top: 30px;
+}
+
+.func__list__item {
+  display: flex;
+  margin-right: 20px;
+  background-color: var(--secondary-color);
+  padding: 9px;
+  border-radius: 8px;
+  width: 43px;
+  height: 43px;
+  cursor: pointer;
+}
+
+.func__list__item img {
+  align-self: center;
+}
+
+.storage__visual {
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.meter {
+  height: 20px;
+  background: var(--secondary-color);
+  border-radius: 25px;
+  position: relative;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.meter>span {
+  display: block;
+  height: 80%;
+  width: 82%;
+  border-radius: 20px;
+  background: linear-gradient(75deg,
+      rgba(255, 163, 153, 1) 26%,
+      rgba(255, 77, 151, 1) 70%);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 2px;
+  left: 2px;
+  color: var(--third-color);
+  font-size: 14px;
+  text-align: right;
+  padding-right: 3px;
+}
+
+.storage__label {
+  margin: 5px 0px 20px 0px;
+}
+
+.label {
+  font-weight: 700;
+  display: inline-block;
+}
+
+.storage__label .label--left {
+  float: left;
+}
+
+.storage__label .label--right {
+  float: right;
+}
+
+.storage__left {
+  clear: both;
+  position: relative;
+  top: 20px;
+  background: var(--third-color);
+  padding: 10px;
+  border-radius: 8px;
+  color: hsl(229, 7%, 55%);
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
+.storage__left span {
+  font-size: 35px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+@media screen and (min-width: 728px) {
+  .wrapper {
+    margin-top: 180px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 4vw;
+  }
+
+  .container--func {
+    height: 75%;
+  }
+
+  .container--storage {
+    height: 60%;
+    position: relative;
+    bottom: -27px;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .storage__left {
+    background-color: transparent;
+    background-image: url(./images/message.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+    width: 150px;
+    height: 100px;
+    top: -160px;
+    right: -150px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background-image: url(./images/bg-desktop.svg);
+  }
+
+  .storage__left {
+    right: -190px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .storage__left {
+    right: -280px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .storage__left {
+    right: -400px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .storage__left {
+    right: -477px;
+  }
+}
